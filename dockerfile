@@ -1,8 +1,11 @@
-# Use official PHP + Apache image
 FROM php:8.2-apache
 
-# Copy files to Apache web root
+# Copy all files into Apache web root
 COPY . /var/www/html/
 
-# Expose default web port
+# Set permissions so Apache can read the files
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html
+
+# Expose default HTTP port
 EXPOSE 10000
