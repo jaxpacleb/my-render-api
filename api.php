@@ -17,7 +17,7 @@ if (!$conn) {
 }
 
 // Query your table
-$result = mysqli_query($conn, "SELECT * FROM students");
+$result = mysqli_query($conn, "SELECT * FROM student");
 $data = [];
 
 while ($row = mysqli_fetch_assoc($result)) {
